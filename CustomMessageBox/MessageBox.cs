@@ -38,6 +38,7 @@ namespace CustomMessageBox
             { msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(); }
             return result;
         }
+
         public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
             DialogResult result;
@@ -52,6 +53,31 @@ namespace CustomMessageBox
             { msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(); }
             return result;
         }
+
+
+        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray)
+        {
+            DialogResult result;
+            using (var msgForm = new FormMessageBox(text, caption, buttons, customButtonTextArray))
+            { msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(); }
+            return result;
+        }
+        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon)
+        {
+            DialogResult result;
+            using (var msgForm = new FormMessageBox(text, caption, buttons, customButtonTextArray, icon))
+            { msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(); }
+            return result;
+        }
+        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        {
+            DialogResult result;
+            using (var msgForm = new FormMessageBox(text, caption, buttons, customButtonTextArray, icon, defaultButton))
+            { msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(); }
+            return result;
+        }
+
+
 
         /*-> IWin32Window Owner:
             *      Displays a message box in front of the specified object and with the other specified parameters.
@@ -83,7 +109,7 @@ namespace CustomMessageBox
         {
             DialogResult result;
             using (var msgForm = new FormMessageBox(text, caption, buttons, icon))
-                { msgForm.StartPosition = StartPosition; msgForm.PrimaryColor = PrimaryColor;result = msgForm.ShowDialog(owner);}
+            { msgForm.StartPosition = StartPosition; msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(owner); }
             return result;
         }
         public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
@@ -93,5 +119,31 @@ namespace CustomMessageBox
                 { msgForm.StartPosition = StartPosition; msgForm.PrimaryColor = PrimaryColor;result = msgForm.ShowDialog(owner);}
             return result;
         }
+
+
+        public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray)
+        {
+            DialogResult result;
+            using (var msgForm = new FormMessageBox(text, caption, buttons, customButtonTextArray))
+            { msgForm.StartPosition = StartPosition; msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(owner); }
+            return result;
+        }
+        public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon)
+        {
+            DialogResult result;
+            using (var msgForm = new FormMessageBox(text, caption, buttons, customButtonTextArray, icon))
+            { msgForm.StartPosition = StartPosition; msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(owner); }
+            return result;
+        }
+        public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        {
+            DialogResult result;
+            using (var msgForm = new FormMessageBox(text, caption, buttons, customButtonTextArray, icon, defaultButton))
+            { msgForm.StartPosition = StartPosition; msgForm.PrimaryColor = PrimaryColor; result = msgForm.ShowDialog(owner); }
+            return result;
+        }
+
+
+
     }
 }

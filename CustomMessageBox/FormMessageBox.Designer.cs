@@ -1,7 +1,7 @@
 ﻿
 namespace CustomMessageBox
 {
-    public partial class FormMessageBox : BaseForm
+    internal partial class FormMessageBox : BaseForm
     {
         /// <summary>
         /// Required designer variable.
