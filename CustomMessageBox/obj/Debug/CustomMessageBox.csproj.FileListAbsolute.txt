@@ -19,3 +19,13 @@ D:\repos\CustomMessageBox-main\CustomMessageBox\bin\Debug\CustomMessageBox.dll.c
 D:\repos\CustomMessageBox-main\CustomMessageBox\bin\Debug\CustomMessageBox.dll
 D:\repos\CustomMessageBox-main\CustomMessageBox\obj\Debug\CustomMessageBox.dll
 D:\repos\CustomMessageBox-main\CustomMessageBox\obj\Debug\CustomMessageBox.FormMessageBox.resources
+D:\repos\CustomMessageBox\CustomMessageBox\bin\Debug\CustomMessageBox.dll.config
+D:\repos\CustomMessageBox\CustomMessageBox\bin\Debug\CustomMessageBox.dll
+D:\repos\CustomMessageBox\CustomMessageBox\bin\Debug\CustomMessageBox.pdb
+D:\repos\CustomMessageBox\CustomMessageBox\obj\Debug\CustomMessageBox.csproj.AssemblyReference.cache
+D:\repos\CustomMessageBox\CustomMessageBox\obj\Debug\CustomMessageBox.FormMessageBox.resources
+D:\repos\CustomMessageBox\CustomMessageBox\obj\Debug\CustomMessageBox.Properties.Resources.resources
+D:\repos\CustomMessageBox\CustomMessageBox\obj\Debug\CustomMessageBox.csproj.GenerateResource.cache
+D:\repos\CustomMessageBox\CustomMessageBox\obj\Debug\CustomMessageBox.csproj.CoreCompileInputs.cache
+D:\repos\CustomMessageBox\CustomMessageBox\obj\Debug\CustomMessageBox.dll
+D:\repos\CustomMessageBox\CustomMessageBox\obj\Debug\CustomMessageBox.pdb

@@ -41,7 +41,7 @@ namespace CustomMessageBox
         //{
         //    InitializeComponent();
         //}
-        public FormMessageBox(string text)
+        public FormMessageBox( string text )
         {
             InitializeComponent();
             InitializeItems();
@@ -49,9 +49,9 @@ namespace CustomMessageBox
             this.labelMessage.Text = text;
             this.labelCaption.Text = "";
             SetFormSize();
-            SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);//Set Default Buttons
+            SetButtons( MessageBoxButtons.OK, MessageBoxDefaultButton.Button1 );//Set Default Buttons
         }
-        public FormMessageBox(string text, string caption)
+        public FormMessageBox( string text, string caption )
         {
             InitializeComponent();
             InitializeItems();
@@ -59,37 +59,37 @@ namespace CustomMessageBox
             this.labelMessage.Text = text;
             this.labelCaption.Text = caption;
             SetFormSize();
-            SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);//Set Default Buttons
+            SetButtons( MessageBoxButtons.OK, MessageBoxDefaultButton.Button1 );//Set Default Buttons
         }
-        public FormMessageBox(string text, string caption, MessageBoxButtons buttons)
-        {
-            InitializeComponent();
-
-            this.buttons = buttons;
-            InitializeItems();
-            this.PrimaryColor = primaryColor;
-            this.labelMessage.Text = text;
-            this.labelCaption.Text = caption;
-            SetFormSize();
-            SetButtons(buttons, MessageBoxDefaultButton.Button1);//Set [Default Button 1]
-        }
-
-
-        public FormMessageBox(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
+        public FormMessageBox( string text, string caption, MessageBoxButtons buttons )
         {
             InitializeComponent();
 
             this.buttons = buttons;
+            InitializeItems();
+            this.PrimaryColor = primaryColor;
+            this.labelMessage.Text = text;
+            this.labelCaption.Text = caption;
+            SetFormSize();
+            SetButtons( buttons, MessageBoxDefaultButton.Button1 );//Set [Default Button 1]
+        }
+
+
+        public FormMessageBox( string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon )
+        {
+            InitializeComponent();
+
+            this.buttons = buttons;
 
             InitializeItems();
             this.PrimaryColor = primaryColor;
             this.labelMessage.Text = text;
             this.labelCaption.Text = caption;
             SetFormSize();
-            SetButtons(buttons, MessageBoxDefaultButton.Button1);//Set [Default Button 1]
-            SetIcon(icon);
+            SetButtons( buttons, MessageBoxDefaultButton.Button1 );//Set [Default Button 1]
+            SetIcon( icon );
         }
-        public FormMessageBox(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        public FormMessageBox( string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton )
         {
             InitializeComponent();
 
@@ -100,13 +100,13 @@ namespace CustomMessageBox
             this.labelMessage.Text = text;
             this.labelCaption.Text = caption;
             //SetFormSize();
-            SetButtons(buttons, defaultButton);
-            SetIcon(icon);
+            SetButtons( buttons, defaultButton );
+            SetIcon( icon );
         }
 
 
 
-        public FormMessageBox(string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray)
+        public FormMessageBox( string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray )
         {
             InitializeComponent();
 
@@ -118,9 +118,9 @@ namespace CustomMessageBox
             this.labelMessage.Text = text;
             this.labelCaption.Text = caption;
             SetFormSize();
-            SetButtons(buttons, MessageBoxDefaultButton.Button1);//Set [Default Button 1]
+            SetButtons( buttons, MessageBoxDefaultButton.Button1 );//Set [Default Button 1]
         }
-        public FormMessageBox(string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon)
+        public FormMessageBox( string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon )
         {
             InitializeComponent();
 
@@ -132,11 +132,11 @@ namespace CustomMessageBox
             this.labelMessage.Text = text;
             this.labelCaption.Text = caption;
             SetFormSize();
-            SetButtons(buttons, MessageBoxDefaultButton.Button1);//Set [Default Button 1]
-            SetIcon(icon);
+            SetButtons( buttons, MessageBoxDefaultButton.Button1 );//Set [Default Button 1]
+            SetIcon( icon );
         }
 
-        public FormMessageBox(string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        public FormMessageBox( string text, string caption, MessageBoxButtons buttons, string[] customButtonTextArray, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton )
         {
             InitializeComponent();
 
@@ -148,8 +148,8 @@ namespace CustomMessageBox
             this.labelMessage.Text = text;
             this.labelCaption.Text = caption;
             SetFormSize();
-            SetButtons(buttons, defaultButton);
-            SetIcon(icon);
+            SetButtons( buttons, defaultButton );
+            SetIcon( icon );
         }
 
 
@@ -159,8 +159,8 @@ namespace CustomMessageBox
         private void InitializeItems()
         {
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Padding = new Padding(borderSize);//Set border size
-            this.labelMessage.MaximumSize = new Size(550, 0);
+            this.Padding = new Padding( borderSize );//Set border size
+            this.labelMessage.MaximumSize = new Size( 550, 0 );
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Visible = false;
@@ -171,39 +171,39 @@ namespace CustomMessageBox
         {
             int widht = this.labelMessage.Width + this.pictureBoxIcon.Width + this.panelBody.Padding.Left;
             int height = this.panelTitleBar.Height + this.labelMessage.Height + this.panelButtons.Height + this.panelBody.Padding.Top;
-            this.Size = new Size(widht, height);
+            this.Size = new Size( widht, height );
         }
 
-        private void SetButtons(MessageBoxButtons buttons, MessageBoxDefaultButton defaultButton)
+        private void SetButtons( MessageBoxButtons buttons, MessageBoxDefaultButton defaultButton )
         {
             this.panelButtons.Controls.Clear();
 
-            if ((buttons == MessageBoxButtons.Custom1Button) || (buttons == MessageBoxButtons.Custom2Buttons) || (buttons == MessageBoxButtons.Custom3Buttons))
+            if( ( buttons == MessageBoxButtons.Custom1Button ) || ( buttons == MessageBoxButtons.Custom2Buttons ) || ( buttons == MessageBoxButtons.Custom3Buttons ) )
             {
-                if (customButtonTextArray == null) return;
+                if( customButtonTextArray == null ) return;
 
-                for (int i = customButtonTextArray.Length - 1; i >= 0; i--)
+                for( int i = customButtonTextArray.Length - 1; i >= 0; i-- )
                 {
-                    if (i == 0)
+                    if( i == 0 )
                     {
                         button3.Visible = true;
                         button3.DialogResult = System.Windows.Forms.DialogResult.Yes;
                         button3.Text = customButtonTextArray[i];
-                        panelButtons.Controls.Add(button3);
+                        panelButtons.Controls.Add( button3 );
                     }
-                    else if (i == 1)
+                    else if( i == 1 )
                     {
                         button2.Visible = true;
                         button2.DialogResult = System.Windows.Forms.DialogResult.No;
                         button2.Text = customButtonTextArray[i];
-                        panelButtons.Controls.Add(button2);
+                        panelButtons.Controls.Add( button2 );
                     }
-                    else if (i == 2)
+                    else if( i == 2 )
                     {
                         button1.Visible = true;
                         button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
                         button1.Text = customButtonTextArray[i];
-                        panelButtons.Controls.Add(button1);
+                        panelButtons.Controls.Add( button1 );
 
                     }
                 }
@@ -211,7 +211,7 @@ namespace CustomMessageBox
             }
             else
             {
-                switch (buttons)
+                switch( buttons )
                 {
                     case MessageBoxButtons.OK:
                         //OK Button
@@ -220,10 +220,10 @@ namespace CustomMessageBox
                         button1.Text = "Ok";
                         button1.DialogResult = System.Windows.Forms.DialogResult.OK;//Set DialogResult
 
-                        this.panelButtons.Controls.Add(button1);
+                        this.panelButtons.Controls.Add( button1 );
 
                         //Set Default Button
-                        SetDefaultButton(defaultButton);
+                        SetDefaultButton( defaultButton );
                         break;
                     case MessageBoxButtons.OKCancel:
                         //OK Button
@@ -237,16 +237,16 @@ namespace CustomMessageBox
                         //button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                         button2.Text = "Cancel";
                         button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;//Set DialogResult
-                                                                   //button2.BackColor = Color.DimGray;
+                                                                                        //button2.BackColor = Color.DimGray;
 
-                        this.panelButtons.Controls.Add(button2);
-                        this.panelButtons.Controls.Add(button1);
+                        this.panelButtons.Controls.Add( button2 );
+                        this.panelButtons.Controls.Add( button1 );
 
 
                         //Set Default Button
-                        if (defaultButton != MessageBoxDefaultButton.Button3)//There are only 2 buttons, so the Default Button cannot be Button3
-                            SetDefaultButton(defaultButton);
-                        else SetDefaultButton(MessageBoxDefaultButton.Button1);
+                        if( defaultButton != MessageBoxDefaultButton.Button3 )//There are only 2 buttons, so the Default Button cannot be Button3
+                            SetDefaultButton( defaultButton );
+                        else SetDefaultButton( MessageBoxDefaultButton.Button1 );
                         break;
 
                     case MessageBoxButtons.RetryCancel:
@@ -261,16 +261,16 @@ namespace CustomMessageBox
                         //button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                         button2.Text = "Cancel";
                         button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;//Set DialogResult
-                                                                   //button2.BackColor = Color.DimGray;
+                                                                                        //button2.BackColor = Color.DimGray;
 
-                        this.panelButtons.Controls.Add(button2);
-                        this.panelButtons.Controls.Add(button1);
+                        this.panelButtons.Controls.Add( button2 );
+                        this.panelButtons.Controls.Add( button1 );
 
 
                         //Set Default Button
-                        if (defaultButton != MessageBoxDefaultButton.Button3)//There are only 2 buttons, so the Default Button cannot be Button3
-                            SetDefaultButton(defaultButton);
-                        else SetDefaultButton(MessageBoxDefaultButton.Button1);
+                        if( defaultButton != MessageBoxDefaultButton.Button3 )//There are only 2 buttons, so the Default Button cannot be Button3
+                            SetDefaultButton( defaultButton );
+                        else SetDefaultButton( MessageBoxDefaultButton.Button1 );
                         break;
 
                     case MessageBoxButtons.YesNo:
@@ -285,15 +285,15 @@ namespace CustomMessageBox
                         //button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                         button2.Text = "No";
                         button2.DialogResult = System.Windows.Forms.DialogResult.No;//Set DialogResult
-                                                               //button2.BackColor = Color.IndianRed;
+                                                                                    //button2.BackColor = Color.IndianRed;
 
-                        this.panelButtons.Controls.Add(button2);
-                        this.panelButtons.Controls.Add(button1);
+                        this.panelButtons.Controls.Add( button2 );
+                        this.panelButtons.Controls.Add( button1 );
 
                         //Set Default Button
-                        if (defaultButton != MessageBoxDefaultButton.Button3)//There are only 2 buttons, so the Default Button cannot be Button3
-                            SetDefaultButton(defaultButton);
-                        else SetDefaultButton(MessageBoxDefaultButton.Button1);
+                        if( defaultButton != MessageBoxDefaultButton.Button3 )//There are only 2 buttons, so the Default Button cannot be Button3
+                            SetDefaultButton( defaultButton );
+                        else SetDefaultButton( MessageBoxDefaultButton.Button1 );
                         break;
                     case MessageBoxButtons.YesNoCancel:
                         //Yes Button
@@ -307,21 +307,21 @@ namespace CustomMessageBox
                         //button2.Location = new Point(xCenter, yCenter);
                         button2.Text = "No";
                         button2.DialogResult = System.Windows.Forms.DialogResult.No;//Set DialogResult
-                                                               //button2.BackColor = Color.IndianRed;
+                                                                                    //button2.BackColor = Color.IndianRed;
 
                         //Cancel Button
                         button3.Visible = true;
                         //button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
                         button3.Text = "Cancel";
                         button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;//Set DialogResult
-                                                                   //button3.BackColor = Color.DimGray;
+                                                                                        //button3.BackColor = Color.DimGray;
 
-                        this.panelButtons.Controls.Add(button3);
-                        this.panelButtons.Controls.Add(button2);
-                        this.panelButtons.Controls.Add(button1);
+                        this.panelButtons.Controls.Add( button3 );
+                        this.panelButtons.Controls.Add( button2 );
+                        this.panelButtons.Controls.Add( button1 );
 
                         //Set Default Button
-                        SetDefaultButton(defaultButton);
+                        SetDefaultButton( defaultButton );
                         break;
 
                     case MessageBoxButtons.AbortRetryIgnore:
@@ -330,7 +330,7 @@ namespace CustomMessageBox
                         //button1.Location = new Point(xCenter - button1.Width - 5, yCenter);
                         button1.Text = "Abort";
                         button1.DialogResult = System.Windows.Forms.DialogResult.Abort;//Set DialogResult
-                                                                  //button1.BackColor = Color.Goldenrod;
+                                                                                       //button1.BackColor = Color.Goldenrod;
 
                         //Retry Button
                         button2.Visible = true;
@@ -343,14 +343,14 @@ namespace CustomMessageBox
                         //button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
                         button3.Text = "Ignore";
                         button3.DialogResult = System.Windows.Forms.DialogResult.Ignore;//Set DialogResult
-                                                                   //button3.BackColor = Color.IndianRed;
+                                                                                        //button3.BackColor = Color.IndianRed;
 
-                        this.panelButtons.Controls.Add(button3);
-                        this.panelButtons.Controls.Add(button2);
-                        this.panelButtons.Controls.Add(button1);
+                        this.panelButtons.Controls.Add( button3 );
+                        this.panelButtons.Controls.Add( button2 );
+                        this.panelButtons.Controls.Add( button1 );
 
                         //Set Default Button
-                        SetDefaultButton(defaultButton);
+                        SetDefaultButton( defaultButton );
                         break;
 
                         //case MessageBoxButtons.CustomTriple:
@@ -387,29 +387,29 @@ namespace CustomMessageBox
         }
 
         bool userClosing = false;
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        protected override void OnFormClosing( FormClosingEventArgs e )
         {
-            if (e.CloseReason == CloseReason.UserClosing) { userClosing = true; }
+            if( e.CloseReason == CloseReason.UserClosing ) { userClosing = true; }
 
-            base.OnFormClosing(e);
+            base.OnFormClosing( e );
         }
 
         //public DialogResult ShowDialog(IWin32Window owner)
-        public new DialogResult ShowDialog(IWin32Window owner)
+        public new DialogResult ShowDialog( IWin32Window owner )
         {
-            if (userClosing)
+            if( userClosing )
                 return CustomMessageBox.DialogResult.Cancel;
 
             System.Windows.Forms.DialogResult dialogResult = base.ShowDialog( owner );
             int result = (int)dialogResult;
 
-            if ((buttons == MessageBoxButtons.Custom1Button) || (buttons == MessageBoxButtons.Custom2Buttons) || (buttons == MessageBoxButtons.Custom3Buttons))
+            if( ( buttons == MessageBoxButtons.Custom1Button ) || ( buttons == MessageBoxButtons.Custom2Buttons ) || ( buttons == MessageBoxButtons.Custom3Buttons ) )
             {
-                if (result == (int)CustomMessageBox.DialogResult.Yes)
+                if( result == (int)CustomMessageBox.DialogResult.Yes )
                     return CustomMessageBox.DialogResult.Custom1stOption;
-                else if (result == (int)CustomMessageBox.DialogResult.No)
+                else if( result == (int)CustomMessageBox.DialogResult.No )
                     return CustomMessageBox.DialogResult.Custom2ndtOption;
-                else if (result == (int)CustomMessageBox.DialogResult.Cancel)
+                else if( result == (int)CustomMessageBox.DialogResult.Cancel )
                     return CustomMessageBox.DialogResult.Custom3rdOption;
             }
 
@@ -418,19 +418,19 @@ namespace CustomMessageBox
 
         public new DialogResult ShowDialog()
         {
-            if (userClosing)
+            if( userClosing )
                 return CustomMessageBox.DialogResult.Cancel;
 
             System.Windows.Forms.DialogResult dialogResult = base.ShowDialog();
             int result = (int)dialogResult;
 
-            if ((buttons == MessageBoxButtons.Custom1Button) || (buttons == MessageBoxButtons.Custom2Buttons) || (buttons == MessageBoxButtons.Custom3Buttons))
+            if( ( buttons == MessageBoxButtons.Custom1Button ) || ( buttons == MessageBoxButtons.Custom2Buttons ) || ( buttons == MessageBoxButtons.Custom3Buttons ) )
             {
-                if (result == (int)CustomMessageBox.DialogResult.Yes)
+                if( result == (int)CustomMessageBox.DialogResult.Yes )
                     return CustomMessageBox.DialogResult.Custom1stOption;
-                else if (result == (int)CustomMessageBox.DialogResult.No)
+                else if( result == (int)CustomMessageBox.DialogResult.No )
                     return CustomMessageBox.DialogResult.Custom2ndtOption;
-                else if (result == (int)CustomMessageBox.DialogResult.Cancel)
+                else if( result == (int)CustomMessageBox.DialogResult.Cancel )
                     return CustomMessageBox.DialogResult.Custom3rdOption;
             }
 
@@ -438,27 +438,27 @@ namespace CustomMessageBox
         }
 
 
-        private void SetDefaultButton(MessageBoxDefaultButton defaultButton)
+        private void SetDefaultButton( MessageBoxDefaultButton defaultButton )
         {
-            switch (defaultButton)
+            switch( defaultButton )
             {
                 case MessageBoxDefaultButton.Button1://Focus button 1
                     button1.Select();
-                    button1.Font = new Font(button1.Font, FontStyle.Underline);
+                    button1.Font = new Font( button1.Font, FontStyle.Underline );
                     break;
                 case MessageBoxDefaultButton.Button2://Focus button 2
                     button2.Select();
-                    button2.Font = new Font(button2.Font, FontStyle.Underline);
+                    button2.Font = new Font( button2.Font, FontStyle.Underline );
                     break;
                 case MessageBoxDefaultButton.Button3://Focus button 3
                     button3.Select();
-                    button3.Font = new Font(button3.Font, FontStyle.Underline);
+                    button3.Font = new Font( button3.Font, FontStyle.Underline );
                     break;
             }
         }
-        private void SetIcon(MessageBoxIcon icon)
+        private void SetIcon( MessageBoxIcon icon )
         {
-            switch (icon)
+            switch( icon )
             {
                 case MessageBoxIcon.Error: //Error
                     this.pictureBoxIcon.Image = System.Drawing.SystemIcons.Error.ToBitmap();
@@ -494,33 +494,33 @@ namespace CustomMessageBox
         }
 
         //-> Events Methods
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click( object sender, EventArgs e )
         {
             this.Close();
         }
 
         #region -> Drag Form
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        [DllImport( "user32.DLL", EntryPoint = "SendMessage" )]
+        private extern static void SendMessage( System.IntPtr hWnd, int wMsg, int wParam, int lParam );
+        [DllImport( "user32.DLL", EntryPoint = "ReleaseCapture" )]
         private extern static void ReleaseCapture();
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        private void panelTitleBar_MouseDown( object sender, MouseEventArgs e )
         {
             ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            SendMessage( this.Handle, 0x112, 0xf012, 0 );
         }
         #endregion
 
-        private void FormMessageBox_KeyUp(object sender, KeyEventArgs e)
+        private void FormMessageBox_KeyUp( object sender, KeyEventArgs e )
         {
-            if (buttons == MessageBoxButtons.RetryCancel || buttons == MessageBoxButtons.YesNoCancel || buttons == MessageBoxButtons.OKCancel)
-                if (e.KeyCode == Keys.Escape)
+            if( buttons == MessageBoxButtons.RetryCancel || buttons == MessageBoxButtons.YesNoCancel || buttons == MessageBoxButtons.OKCancel )
+                if( e.KeyCode == Keys.Escape )
                 {
-                    this.Dispose(true);
+                    this.Dispose( true );
                 }
         }
 
-        private void FormMessageBox_Load(object sender, EventArgs e)
+        private void FormMessageBox_Load( object sender, EventArgs e )
         {
 
         }
@@ -530,7 +530,7 @@ namespace CustomMessageBox
     {
         protected Color primaryColor = Color.CornflowerBlue;
 
-        [Browsable(true), Description("PrimaryColor"), Category("Misc")]
+        [Browsable( true ), Description( "PrimaryColor" ), Category( "Misc" )]
         public virtual Color PrimaryColor
         {
             get { return primaryColor; }
@@ -545,6 +545,8 @@ namespace CustomMessageBox
 
         public BaseForm()
         {
+            this.TopMost = true; // important 
+
             //this.panelTitleBar = new System.Windows.Forms.Panel();
         }
     }
